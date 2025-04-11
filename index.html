@@ -1,75 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flags of the World Quiz</title>
 
-    <link href="/assets/style.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-
+    <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
     <div id="game-container">
+      <div id="start-screen">
+        <h1 id="game-title">
+          How Well Do You Know Your World?
+        </h1>
+        <h2>
+          General Knowledge Quiz
+        </h2>
+        <button class="start-button btn">
+          Start Quiz
+        </button>
+        <button class="instructions-button btn">
+          How to Play
+        </button>
+      </div>
 
-        <div id="start-screen" >
-            <h1 id="game-title">
-                Flags of the World 
-                <br>
-                QUIZ
-            </h1>
-            <button class="start-button btn">
-                Start Quiz
-            </button>
-            <button class="instructions-button btn">
-                How to Play
-            </button>
+      <div id="instructions-container" class="hidden">
+        <h2 class="instructions-title">
+          🗒️ How to Play
+        </h2>
+        <section id="instructions">
+          <p>
+            Please read each question thoroughly before selecting your answer.
+          </p>
+          <h3>Quiz Format</h3>
+          <p>
+            This quiz consists of 15 multiple choice questions. Each question
+            has only one correct answer.
+          </p>
+          <h3>Scoring</h3>
+          <p>Each correct answer is worth 1 point, for a total of 15 points.</p>
+          <h3>Time Limit</h3>
+          <p>
+            There is <strong>no time limit</strong> for this quiz. Take your
+            time to think through each question before submitting your answer.
+          </p>
+          <h3>Attempts</h3>
+          <p>
+            You are allowed only <strong>one attempt per question</strong>. Once
+            you select and submit your answer, it <strong>cannot</strong> be
+            changed.
+          </p>
+          <h3>Navigation</h3>
+          <p>
+            After answering each question, click the
+            <strong>“Next”</strong> button to move on to the next question. Once
+            you proceed to the next question, you cannot return to the previous
+            one.
+            <br />
+            On the last question, click the <strong> “Finish” </strong> button
+            to submit the quiz and proceed to the
+            <strong>Results Dashboard</strong> where you can view your results.
+          </p>
+        </section>
+        <button class="start-button btn">
+          I'm Ready!
+        </button>
+        <button class="return-to-menu-button btn">
+          Return to Main Menu
+        </button>
+      </div>
+
+      <div id="game-screen" class="hidden">
+        <h2 class="instructions-title">Question</h2>
+        <!-- <img> include image of the flag or a picture of the topic of the question. -->
+        <section id="answers-container">
+          <button class="answer-button btn">Answer 1</button>
+          <button class="answer-button btn">Answer 2</button>
+          <button class="answer-button btn">Answer 3</button>
+          <button class="answer-button btn">Answer 4</button>
+        </section>
+        <div id="game-screen-footer">
+          <button class="next-button btn">Next</button>
         </div>
+      </div>
 
-        <div id="instructions-screen" class="hidden">
-            <h2 class="instructions-title">
-                How to Play
-            </h2>
-            <button class="start-button btn">
-                I'm Ready!
-            </button>
-            <button class="return-to-menu-button btn">
-                Return to Main Menu
-            </button>
+      <div id="results-dashboard" class="hidden">
+        <h2 id="results-header">
+          Results
+        </h2>
+        <section id="results-container">
+          <h3>
+            Final Score
+          </h3>
+          <div id="score"></div>
+        </section>
+        <div id="results-footer">
+          <button class="return-to-menu-button btn">Return to Main Menu</button>
+          <button class="exit-quiz-button btn">Exit Quiz</button>
         </div>
-
-        <div id="game-screen" class="hidden">
-            <div id="questions-container"></div>
-            <section id="answers-container"></section>
-            <div id="game-screen-footer">
-                <button class="next-button btn">
-                    Next
-                </button>
-            </div>
-        </div>
-
-        <div id="results-screen" class="hidden">
-            <h2 id="results-header">
-                Results
-            </h2>
-            <section id="results-container">
-                <h3>
-                    Final Score
-                </h3>
-                <div id="score"></div>
-            </section>
-            <div id="results-footer">
-                <button class="return-to-menu-button btn">
-                    Return to Main Menu
-                </button>
-                <button class="exit-quiz-button btn">
-                    Exit Quiz
-                </button>
-            </div>
-
-        </div>
-
+      </div>
     </div>
 
     <script src="scripts/quiz.js"></script>
-</body>
+  </body>
 </html>
