@@ -12,16 +12,23 @@
     <link href="/assets/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div id="game-container">
-      <div id="start-screen">
-        <h1 id="game-title">How Well Do You Know Your World?</h1>
-        <h2>General Knowledge Quiz</h2>
-        <button class="start-button btn">Start Quiz</button>
-        <button class="instructions-button btn">How to Play</button>
+      <div id="start-screen" class="container">
+        <div class="game-title">
+          <h1>How Well Do You Know Your World?</h1>
+          <h2>General Knowledge Quiz</h2>
+          <span>🗺️</span>
+        </div>
+
+        <div class="start-screen-options">
+          <button id="start-button" class="start-button btn">Start Quiz</button>
+          <button id="instructions-button" class="instructions-button btn">How to Play</button>
+        </div>
       </div>
 
-      <div id="instructions-container" class="hidden">
-        <h2 class="instructions-title">🗒️ How to Play</h2>
+      <div id="instructions-container" class="container hide">
+        <header class="instructions-title">
+          <h2>🗒️ How to Play</h2>
+        </header>
         <section id="instructions">
           <p>
             Please read each question thoroughly before selecting your answer.
@@ -56,47 +63,41 @@
             <strong>Results</strong> dashboard where you can view your results.
           </p>
         </section>
-        <div class="instructions-buttons-container">
+        <footer class="instructions-buttons-container">
           <button class="start-button btn">I'm Ready!</button>
-          <button class="return-to-menu-button btn">Return to Main Menu</button>
-        </div>
+          <button id="return-to-menu-button" class="return-to-menu-button btn">Return to Main Menu</button>
+        </footer>
       </div>
 
-      <div id="game-screen" class="hidden">
-        <div class="game-screen-header">
-          <div class="question-counter">
-            <span class="question-number"> 1/15</span>
-          </div>
+      <div id="game-screen" class="container hide">
+        <header class="game-screen-header">
+          <span class="question-counter">1/15</span>
           <div>
-            <span id="question-goes-here">Question</span>
+            <p id="question">Question</p>
           </div>
-        </div>
-        <div>
-          <!-- <img> include image of the flag or a picture of the topic of the question. -->
-        </div>
+        </header>
         <section id="answers-container">
-          <button class="answer-button btn">Answer 1</button>
+          <button class="answer-button btn correct">Answer 1</button>
           <button class="answer-button btn">Answer 2</button>
-          <button class="answer-button btn">Answer 3</button>
+          <button class="answer-button btn wrong">Answer 3</button>
           <button class="answer-button btn">Answer 4</button>
         </section>
-        <div id="game-screen-footer">
-          <button class="next-button btn">Next</button>
-        </div>
+        <button id="next-button" class="next-button btn">Next</button>
       </div>
 
-      <div id="results-dashboard" class="hidden">
+      <div id="results-dashboard" class="container hide">
         <h2 id="results-header">Results</h2>
-        <section id="results-container">
+        <div id="results-container">
           <h3>Final Score</h3>
-          <div id="score"></div>
-        </section>
-        <div id="results-footer" class="hidden">
-          <button class="return-to-menu-button btn">Return to Main Menu</button>
+          <div id="score">
+            <img src="assets/imgs/world-image.jpg" alt="" class="world-image">
+          </div>
+        </div>
+        <div id="results-footer">
+          <button id="return-to-menu-button" class="return-to-menu-button btn">Return to Main Menu</button>
           <button class="exit-quiz-button btn">Exit Quiz</button>
         </div>
       </div>
-    </div>
 
     <script src="scripts/quiz.js"></script>
   </body>

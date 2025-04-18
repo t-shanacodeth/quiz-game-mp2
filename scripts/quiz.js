@@ -1,6 +1,6 @@
 // QUESTIONS
 
-const questions = [
+const questionsList = [
     {
         question: "What is the capital of Barbados?",
         answers: [
@@ -136,4 +136,76 @@ const questions = [
             {option: "Brazil", correct: true}
         ]
     }
-]
+];
+
+
+// GENERAL VARIABLES
+
+const startButton = document.getElementById("start-button");
+const instructionsButton = document.getElementById("instructions-button");
+const returnToMainMenu = document.getElementById("return-to-menu-button")
+const nextButton = document.getElementById("next-button");
+
+const startScreen = document.getElementById("start-screen");
+const instructionsScreen = document.getElementById("instructions-container");
+const gameScreen = document.getElementById("game-screen");
+const resultsDashboard = document.getElementById("results-dashboard");
+
+const questionDisplayed = document.getElementById("question-goes-here");
+const answersDisplayed = document.getElementById("answers-container");
+const questionsLimitPerGame = 15;
+
+let randomizedQuestionsList = [];
+let currentQuestionIndex = 0;
+let score = 0;
+
+
+// EVENT LISTENERS
+
+startButton.addEventListener("click", startGame);
+instructionsButton.addEventListener("click", instructions);
+nextButton.addEventListener("click", nextQuestion);
+
+
+// FUNCTIONS
+
+function startGame(){
+    console.log("The game has started!");
+    startScreen.classList.add("hide");
+    gameScreen.classList.remove("hide");
+}
+
+function instructions(){
+    startScreen.classList.add("hide");
+    instructionsScreen.classList.remove("hide");
+
+    // if (startButton.click === true){
+    //     instructionsScreen.classList.remove("show");
+    //     gameScreen.classList.add("show");
+    // } else if (returnToMainMenu === true) {
+    //     instructionsScreen.classList.remove("show");
+    //     startScreen.classList.add("show");
+    // }
+};
+
+returnToMainMenu
+
+function nextQuestion(){
+    for ()
+
+};
+
+function showQuestion(){
+
+};
+
+function selectAnswer(){
+    checkAnswer()
+}
+
+function checkAnswer(){
+
+};
+
+
+
