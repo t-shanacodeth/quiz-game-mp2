@@ -151,11 +151,12 @@ const instructionsScreen = document.getElementById("instructions-container");
 const gameScreen = document.getElementById("game-screen");
 const resultsDashboard = document.getElementById("results-dashboard");
 
-const questionDisplayed = document.getElementById("question-goes-here");
-const answersDisplayed = document.getElementById("answers-container");
-const questionsLimitPerGame = 15;
+const questionElement = document.getElementById("question");
+const answerContainer = document.getElementById("answers-container");
 
-let randomizedQuestionsList = [];
+const maxQuestions = 15;
+
+let randomizedQuestion = [];
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -172,8 +173,27 @@ nextButton.addEventListener("click", nextQuestion);
 function startGame(){
     console.log("The game has started!");
     startScreen.classList.add("hide");
-    gameScreen.classList.remove("hide");
+    score = 0;
+    currentQuestionIndex = 0;
+    gameScreen.classList.remove("hide")
+    nextQuestion();
 }
+
+function getRandomQuestion() {
+    randomizedQuestion = Math.floor(Math.random() * questionsList.length);
+    return(questionsList[randomizedQuestion]);
+}
+
+function nextQuestion(){
+    displayQuestion(getRandomQuestion(currentQuestionIndex))
+   };
+
+function displayQuestion(question){
+    questionElement.innerText = questionsList.question;
+    // if (currentQuestionIndex < maxQuestions){
+    //     getRandomQuestion();
+    // }
+};
 
 function instructions(){
     startScreen.classList.add("hide");
@@ -190,14 +210,9 @@ function instructions(){
 
 returnToMainMenu
 
-function nextQuestion(){
-    for ()
 
-};
 
-function showQuestion(){
 
-};
 
 function selectAnswer(){
     checkAnswer()

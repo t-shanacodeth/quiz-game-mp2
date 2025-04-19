@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=trending_flat" />
     <link href="/assets/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -77,12 +78,15 @@
           </div>
         </header>
         <section id="answers-container">
-          <button class="answer-button btn correct">Answer 1</button>
+          <button class="answer-button btn">Answer 1</button>
           <button class="answer-button btn">Answer 2</button>
-          <button class="answer-button btn wrong">Answer 3</button>
+          <button class="answer-button btn">Answer 3</button>
           <button class="answer-button btn">Answer 4</button>
         </section>
-        <button id="next-button" class="next-button btn">Next</button>
+        <button id="next-button" class="next-button btn">Next<span class="material-symbols-outlined">
+          trending_flat
+          </span>
+        </button>
       </div>
 
       <div id="results-dashboard" class="container hide">
@@ -90,7 +94,7 @@
         <div id="results-container">
           <h3>Final Score</h3>
           <div id="score">
-            <img src="assets/imgs/world-image.jpg" alt="" class="world-image">
+            <p>0/15 questions answered<strong>correctly!</strong></p>
           </div>
         </div>
         <div id="results-footer">
