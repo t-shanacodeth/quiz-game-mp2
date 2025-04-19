@@ -142,7 +142,7 @@ body {
 /* GAME SCREEN */
 
 #game-screen header {
-    width: 90%;
+    width: 95%;
     padding: 25px;
     margin-bottom: 50px;
     border-bottom: 2px solid #c0bfd2;
@@ -195,6 +195,12 @@ body {
     background-color: #e55451;
     border-color: #9f0e0b;
     color: whitesmoke;
+}
+
+.next-button {
+    display: inline-flex;
+    gap: 4.5px;
+    align-items: center;
 }
 
 
