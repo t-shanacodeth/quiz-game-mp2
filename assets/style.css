@@ -146,7 +146,8 @@ body {
     padding: 25px;
     margin-bottom: 50px;
     border-bottom: 2px solid #c0bfd2;
-    display: flex;
+    display: inline-flex;
+    gap: 15px;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -161,7 +162,7 @@ body {
 }
 
 #question {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
 }
 
 #answers-container {

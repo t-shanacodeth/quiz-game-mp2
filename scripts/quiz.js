@@ -74,7 +74,7 @@ const questionsList = [
         ]
     },
     {
-        question: "How many countries does China share a border with",
+        question: "How many countries does China share a border with?",
         answers: [
             {option: "3", correct: false},
             {option: "14", correct: true},
@@ -145,6 +145,7 @@ const startButton = document.getElementById("start-button");
 const instructionsButton = document.getElementById("instructions-button");
 const returnToMainMenu = document.getElementById("return-to-menu-button")
 const nextButton = document.getElementById("next-button");
+const questionCounter = document.getElementsByClassName("question-counter")
 
 const startScreen = document.getElementById("start-screen");
 const instructionsScreen = document.getElementById("instructions-container");
@@ -165,7 +166,7 @@ let score = 0;
 
 startButton.addEventListener("click", startGame);
 instructionsButton.addEventListener("click", instructions);
-nextButton.addEventListener("click", nextQuestion);
+nextButton.addEventListener("click", getNextQuestion);
 
 
 // FUNCTIONS
@@ -174,9 +175,10 @@ function startGame(){
     console.log("The game has started!");
     startScreen.classList.add("hide");
     score = 0;
+    getRandomQuestion();
     currentQuestionIndex = 0;
     gameScreen.classList.remove("hide")
-    nextQuestion();
+    getNextQuestion();
 }
 
 function getRandomQuestion() {
@@ -184,18 +186,61 @@ function getRandomQuestion() {
     return(questionsList[randomizedQuestion]);
 }
 
-function nextQuestion(){
-    displayQuestion(getRandomQuestion(currentQuestionIndex))
+function getNextQuestion() {
+    resetToDefaultState();
+    if (currentQuestionIndex < maxQuestions) {
+        displayQuestion(getRandomQuestion(currentQuestionIndex));
+        currentQuestionIndex++;
+        // questionCounter.innerText = `${currentQuestionIndex}/${maxQuestions}`;
+    } else if (currentQuestionIndex === maxQuestions) {
+        nextButton.disabled = false;
+        nextButton.innerText = "Finish";
+        
+        nextButton.addEventListener("click", function() {
+            gameScreen.classList.add("hide");
+            resultsDashboard.classList.remove("hide");
+        });
+    }; 
    };
 
-function displayQuestion(question){
-    questionElement.innerText = questionsList.question;
-    // if (currentQuestionIndex < maxQuestions){
-    //     getRandomQuestion();
-    // }
+function displayQuestion(questionObject) {
+    questionElement.innerText = questionObject.question;
+    console.log(questionObject.question);
+
+    questionObject.answers.forEach(answerArray => {
+        const answerButton = document.createElement("button");
+        answerButton.innerText = answerArray.option;
+        answerButton.classList.add("answer-button");
+        answerButton.classList.add("btn");
+        answerContainer.appendChild(answerButton);
+    });
 };
 
-function instructions(){
+function resetToDefaultState() {
+    // nextButton.disabled = true;
+    while (answerContainer.firstChild) {
+        answerContainer.removeChild(answerContainer.firstChild);
+    }
+}
+
+// function selectAnswer(event){
+//     const selectedButton = event.target;
+//     const isCorrectAnswer = selectedButton.dataset.correct === "true";
+//     if (isCorrectAnswer){
+//         selectectButton.classList.add("correct");
+//         score++;
+//     } else {
+//         selectedButton.classList.add("wrong");
+//     }
+//     Array.from(answerContainer.children).forEach(button => {
+//         if (button.dataset.correct === "true"){
+//             button.classList.add("correct");
+//         }
+//     });
+//     nextButton.disabled = false;
+// }
+
+function instructions() {
     startScreen.classList.add("hide");
     instructionsScreen.classList.remove("hide");
 
@@ -214,13 +259,9 @@ returnToMainMenu
 
 
 
-function selectAnswer(){
-    checkAnswer()
-}
 
-function checkAnswer(){
 
-};
+
 
 
 
