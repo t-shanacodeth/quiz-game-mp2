@@ -1,4 +1,4 @@
-# Milestone Project 1: Therapia Counselling Service
+# Milestone Project 2: How Well Do you Know Your World? General Knowledge Quiz
 
 <img src="documentation/wireframes/therapia-mockup.png" width="90%">
 
